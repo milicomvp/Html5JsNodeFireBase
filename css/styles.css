@@ -1,0 +1,22 @@
+body {
+    background-image: url('../img/fondo.jpg'); /* Aquí colocas la URL de tu imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.search-container {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 50px;
+    border-radius: 15px;
+}
+
+#searchInput {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#responseContainer {
+    font-size: 1.2rem;
+}
