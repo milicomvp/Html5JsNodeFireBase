@@ -18,7 +18,9 @@ async function obtenerApiKey() {
     try {
         const response = await fetch(apiClient.baseUrl + '/api/openai-key',{
             method: 'GET',
-            credentials: 'include' // Esto es necesario si estás trabajando con cookies
+            headers: {
+                'Content-Type': 'application/json'
+              }
         }); // Solicita la clave API al backend
         if (!response.ok) {
             throw new Error('No se pudo obtener la clave API');
