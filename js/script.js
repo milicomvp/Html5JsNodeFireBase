@@ -16,7 +16,10 @@ let mensajes = [];
 
 async function obtenerApiKey() {
     try {
-        const response = await fetch(apiClient.baseUrl + '/api/openai-key'); // Solicita la clave API al backend
+        const response = await fetch(apiClient.baseUrl + '/api/openai-key',{
+            method: 'GET',
+            credentials: 'include' // Esto es necesario si estás trabajando con cookies
+        }); // Solicita la clave API al backend
         if (!response.ok) {
             throw new Error('No se pudo obtener la clave API');
         }
