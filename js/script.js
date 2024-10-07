@@ -1,5 +1,10 @@
 // Este es el archivo JavaScript para manejar la lógica de la llamada a la API de OpenAI
 
+
+// Instanciamos el cliente API con la URL de tu backend publicado en Vercel
+const apiClient = new ApiClient('https://firebase-node-backend-jj3hl6pcl-estebanreinosos-projects.vercel.app/');
+
+// Eventos de Search
 document.getElementById('searchButton').addEventListener('click', enviarPregunta);
 document.getElementById('searchInput').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
@@ -11,7 +16,7 @@ let mensajes = [];
 
 async function obtenerApiKey() {
     try {
-        const response = await fetch('http://localhost:3000/api/openai-key'); // Solicita la clave API al backend
+        const response = await fetch(apiClient.baseUrl + '/api/openai-key'); // Solicita la clave API al backend
         if (!response.ok) {
             throw new Error('No se pudo obtener la clave API');
         }
