@@ -2,7 +2,8 @@
 
 
 // Instanciamos el cliente API con la URL de tu backend publicado en Vercel
-const apiClient = new ApiClient('https://firebase-node-backend-jj3hl6pcl-estebanreinosos-projects.vercel.app/');
+// const apiClient = new ApiClient('https://firebase-node-backend-jj3hl6pcl-estebanreinosos-projects.vercel.app/');
+const apiClient = new ApiClient('http://localhost:3000');
 
 // Eventos de Search
 document.getElementById('searchButton').addEventListener('click', enviarPregunta);
